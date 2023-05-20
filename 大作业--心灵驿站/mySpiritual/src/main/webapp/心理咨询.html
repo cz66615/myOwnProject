@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <script type="text/javascript" src="js/axios.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <style type="text/css">
+        #app-1 {
+            margin: 0 auto;
+
+
+        }
+
+        #register {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        el-input {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        span {
+            margin-top: 40px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .up {
+            width: 100%;
+            height: 60px;
+            display: block;
+            animation-name: abc;
+            animation-duration: 0s;
+            background-image: linear-gradient(to bottom, rgba(204, 204, 204, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+            line-height: 10px;
+            display: flex;
+            flex-direction: row;
+
+            font-weight: bold;
+        }
+
+        .a-1 {
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        .a-2 {
+
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        .a-3 {
+
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        .a-4 {
+
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        .a-5 {
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        .a-6 {
+            background-color: #ff7f50;
+            font-weight: bold;
+
+        }
+
+        .a-7 {
+            background-color: #ffa07a;
+            font-weight: bold;
+        }
+
+        /* 颜色 动画 */
+        [class*="a-"] {
+            width: 20%;
+            float: left;
+            text-align: center;
+            /* line-height: 100px; */
+            animation-name: cde;
+            animation-duration: 0.5s;
+            display: none;
+            height: 50px;
+            border-radius: 15px;
+            line-height: 50px;
+            margin-top: 10px;
+
+        }
+
+        @keyframes cde {
+            0% {
+                height: 20%;
+            }
+
+            20% {
+                height: 80%;
+            }
+
+            40% {
+                height: 40%;
+            }
+
+            60% {
+                height: 100%;
+            }
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        /* 鼠标划过现出导航 */
+        .up:hover [class*="a-"] {
+            display: block;
+
+        }
+
+        a:hover {
+            color: white;
+
+        }
+
+        /* 导航详情框 */
+        .innerdiv {
+
+
+            margin: auto;
+            animation-name: in;
+            animation-duration: 0.8s;
+            max-width: 200px;
+            min-width: 100px;
+            border-radius: 10px;
+            background-color: #CCCCCC;
+            display: none;
+        }
+
+        /* 详情框的动画 */
+        @keyframes in {
+            from {
+                height: 0px;
+                top: 203px;
+            }
+
+            to {
+                height: 203px;
+                top: 0px;
+            }
+        }
+
+        #container {
+            width: 100%;
+            height: 700px
+        }
+
+        /*{position:absolute;width:100%;height: 200px;background-color:#99bbbb;background-image:url("心心.jpg");background-size:20%;background-repeat:repeat-x;box-shadow: 10px 10px 5px #888888;}*/
+        #header {
+            width: 100%;
+            height: 190px;
+            background-image: url("images/心心.jpg");
+            background-size: 20%;
+            background-repeat: repeat-x;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        #PageBody {
+            position: absolute;
+            height: 520px;
+            width: 100%;
+            margin-bottom: 5px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        /*#PageBody-right { position:absolute;right:0;top:0;height:800px;width:50%;margin-bottom:5px;box-shadow: 10px 10px 5px #888888;background-color:#ffe4e1;}*/
+        #menu {
+            position: absolute;
+            background-color: #ffe4e1;
+            left: 0;
+            top: 0px;
+            height: 0px;
+            width: 300px;
+            float: left;
+            box-shadow: 10px 10px 5px #888888;
+            text-align: center;
+        }
+
+        #content-left {
+            position: absolute;
+            background-color: #ffffff;
+            margin-left: 320px;
+            margin-top: 10px;
+            height: 480px;
+            width: 800px;
+        }
+
+        #content-right {
+            position: absolute;
+            background-color: #FFE4E1;
+            height: 480px;
+            margin-top:10px;
+            width: 300px;
+            float: left;
+            left: 1150px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        #footer {
+            position: absolute;
+            background-color: #99bbbb;
+            top: 2000px;
+            clear: both;
+            text-align: center;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 22px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: 18px;
+            color: #db7093
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #aa {
+            height: 40px;
+            width: 90px;
+            top: 80px;
+            left: 200px;
+            background-color: #ffb6c1;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #bb {
+            height: 120px;
+            width: 90px;
+            top: 40px;
+            left: 0px;
+            background-color: #fff0f5;
+            position: absolute;
+        }
+
+        table {
+            height: 120px;
+            width: 90px;
+            border: 0px;
+            text-align: center;
+        }
+
+        #cc {
+            height: 40px;
+            width: 90px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: hidden;
+            background-color: #ffc0cb;
+
+        }
+
+        #dd {
+            height: 40px;
+            width: 90px;
+            background-color: #dda0dd;
+            position: absolute;
+            left: 90px;
+            top: 0px;
+
+        }
+
+        #ee {
+            height: 40px;
+            width: 90px;
+            position: absolute;
+            left: 0px;
+            top: 40px;
+            overflow: hidden;
+            background-color: #ee82ee;
+
+        }
+
+        #ff {
+            height: 40px;
+            width: 90px;
+            background-color: #d8bfd8;
+            position: absolute;
+            left: 90px;
+            top: 0px;
+
+        }
+
+        #gg {
+            height: 40px;
+            width: 90px;
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            overflow: hidden;
+            background-color: #ffb6c1;
+
+        }
+
+        #hh {
+            height: 40px;
+            width: 90px;
+            background-color: #db7093;
+            position: absolute;
+            left: 90px;
+            top: 0px;
+
+        }
+
+        /*图片轮播*/
+        #max {
+            width: 900px;
+            height: 500px;
+            align-items: center;
+            margin: 5% auto;
+            margin-top: 0%;
+        }
+
+        .re {
+            position: relative;
+            height: 400px;
+        }
+
+        .re ul {
+            list-style-type: none;
+        }
+
+        .re ul>li {
+            width: 600px;
+            height: 300px;
+            position: absolute;
+
+            transition: 1s;
+            opacity: 0;
+        }
+
+        .re ul>li img {
+            width: 900px;
+            height: 500px;
+            border-radius: 10%;
+            border: 15px solid #fffbd6;
+        }
+
+        #max ol {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(5, 75px);
+            grid-template-rows: auto;
+            grid-gap: 1em;
+            gap: 1em;
+            float: right;
+            margin-top: 450px;
+            list-style: none;
+            top: 0;
+            left: 0;
+        }
+
+        #max ol li {
+            width: 25px;
+            height: 10px;
+            font-size: 15px;
+            line-height: 20px;
+            float: left;
+            text-align: center;
+            border-radius: 2em;
+            border: 5px solid #999999;
+        }
+
+
+        #ccc {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to bottom, #f1f1f1, #DFDFF5, #FF9980, #FFC080, #f1f1f1);
+            border-radius: 50%;
+            opacity: 0.5;
+            left: 0;
+            bottom: -80px;
+            animation: flying 10s ease-in infinite;
+        }
+
+        #ccc:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            animation-duration: 3s;
+            animation-delay: 0s;
+        }
+
+        #ccc:nth-child(2) {
+            width: 30px;
+            height: 30px;
+            animation-duration: 3s;
+            animation-delay: 1s;
+        }
+
+        #ccc:nth-child(3) {
+            /*left:20%;*/
+            width: 10px;
+            height: 10px;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        #ccc:nth-child(4) {
+            /*right:20%;*/
+            width: 20px;
+            height: 20px;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        #ccc:nth-child(5) {
+            /*right:50%;*/
+            width: 40px;
+            height: 40px;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        @keyframes flying {
+            0% {
+                bottom: -100px;
+                transform: translatex(0px);
+            }
+
+            50% {
+                transform: translatex(100px);
+            }
+
+            100% {
+                bottom: 1000px;
+                transform: translatex(-200px);
+            }
+        }
+        .my-content {
+		    background: #E1F3D8;
+		  }
+        .my-label {
+		    background: #FDE2E2;
+		  }
+		
+		  
+    </style>
+
+
+</head>
+
+<body>
+
+    
+
+    <div id="app">
+    	<div id="header">
+        <div class="up">
+            <div class="a-5" style="margin-left:300px;"><span><a href="遇见自己.html">遇见自己</a></span></div>
+            <div class="a-6"><span><a href="主题选择.html">主题选择</a></span></div>
+            <div class="a-7"><span><a href="心理咨询.html">心理咨询</a></span></div>
+
+        </div>
+
+        </br>
+        <div style="width:900px;margin:0 auto;margin-bottom:20px;height:100px;">
+            <el-steps :active="active" finish-status="success">
+                <el-step title="预约时间"></el-step>
+                <el-step title="填写咨询内容"></el-step>
+                <el-step title="填写联系方式"></el-step>      
+            </el-steps>
+            <el-row>		  
+			  <el-button type="danger" @click="back">返回</el-button>
+			</el-row>
+        </div>
+    </div>
+
+    
+
+
+    <div id="PageBody">
+        <div id="menu">
+            <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+                <img class="meme" src="images/么么.gif" width="300px" height="400px" 
+                style="margin-top:100px;">
+        </div>
+    </div>
+
+
+
+    <div id="content-left">
+        <div id="cosult1" style="background:url(images/consult1.jpg);height:480px;width: 800px;" v-if="active==0">
+        	<template>
+			  <div class="block" style="margin-left:100px;">
+			    <span class="demonstration">选择咨询时间:</span>
+			    <el-date-picker
+			      v-model="time"
+			      type="datetimerange"
+			      :picker-options="pickerOptions"
+			      range-separator="至"
+			      start-placeholder="开始日期"
+			      end-placeholder="结束日期"
+			      align="right">
+			    </el-date-picker>
+			  </div>
+			  <el-row>
+				  <el-button type="info" round style="margin-left:350px;margin-top:20px;" @click="next" round>下一步</el-button>
+				</el-row>
+			</template>
+        </div>
+	    <div id="consult2" style="background:url(images/consult1.jpg);height:480px;width: 800px;" v-if="active==1">
+	        	<el-input style="width:600px;margin-left:100px;margin-top:20px;"
+				  type="textarea"
+				  :rows="6"
+				  placeholder="请输入咨询内容"
+				  v-model="content">
+				</el-input> 
+				<el-row>
+  					<el-button type="warning" style="margin-left:300px;margin-top:20px;" @click="next" round>下一步</el-button>
+				</el-row>   	
+        </div>
+        <div id="consult3" style="background:url(images/consult1.jpg);height:480px;width: 800px;" v-if="active==2||active==3">
+        	<el-descriptions title="" :column="3" border>
+			  <el-descriptions-item label="用户名" label-class-name="my-label" content-class-name="my-content">{{userName}}</el-descriptions-item>
+			  <el-descriptions-item label="年龄">
+			  	<el-input style="width:60px;"
+					  type="text"
+					  placeholder="年龄"
+					  v-model="age"
+				 >
+			  </el-descriptions-item>
+			  <el-descriptions-item label="手机号">
+				  <el-input
+					  type="text"
+					  placeholder="手机号"
+					  v-model="phoneNumber"
+					  maxlength="11"
+				  >
+			  </el-descriptions-item>
+			  <el-descriptions-item label="联系地址" :contentStyle="{'text-align': 'right'}">
+			  	<el-input
+					  type="text"
+					  placeholder="联系地址"
+					  v-model="contactAddress"
+				  >
+			  </el-descriptions-item>
+			</el-descriptions>
+			<el-row>
+  					<el-button type="success" style="margin-left:300px;margin-top:20px;" @click="next" round>完成</el-button>
+			</el-row>   
+        </div>
+    </div>
+
+    <div id="content-right">
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <div id="ccc"></div>
+        <br /><br /><br /><br /><br />
+        <center>
+            <h1>
+                <p><a href="https://baike.baidu.com/item/%E9%9D%92%E6%98%A5%E6%9C%9F/17633538?fr=aladdin">青春期</a></p>
+                <br />
+                <p><a href="http://news.sina.com.cn/s/2008-06-17/141715762001.shtml">环境对青少年的影响</a></p><br />
+                <p><a href="http://www.360doc.com/content/11/1004/13/535749_153311248.shtml">青少年的大脑</a></p><br />
+                <p><a href="https://zhidao.baidu.com/question/23505730.html">青少年思维发展的特点</a></p><br />
+                <p><a
+                        href="https://baike.baidu.com/item/%E5%9F%83%E9%87%8C%E5%85%8B%E6%A3%AE%E5%85%AB%E9%98%B6%E6%AE%B5%E7%90%86%E8%AE%BA/8394418?fr=aladdin">埃里克森八阶段理论</a>
+                </p><br />
+                <p><a
+                        href=" https://baike.baidu.com/item/%E5%90%8C%E4%B8%80%E6%80%A7%E6%B7%B7%E4%B9%B1/15581454?fr=aladdin">同一性混乱</a>
+                </p>
+            </h1>
+        </center>
+
+
+    </div>
+    </div>
+    
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                	time:"",
+                	content:"",
+                	userName:"",
+                	age:"",
+                	phoneNumber:"",
+                	contactAddress:"",
+                    active: 0,
+                    pickerOptions: {
+                        shortcuts: [{
+                          text: '最近一周',
+                          onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit('pick', [start, end]);
+                          }
+                        }, {
+                          text: '最近一个月',
+                          onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+                            picker.$emit('pick', [start, end]);
+                          }
+                        }, {
+                          text: '最近三个月',
+                          onClick(picker) {
+                            const end = new Date();
+                            const start = new Date();
+                            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+                            picker.$emit('pick', [start, end]);
+                          }
+                        }]
+                      }
+                };
+            },
+            mounted(){
+            	axios({
+            		method:"get",
+            		url:"http://localhost:8080/mySpiritual/consult/getUserName"
+            	}).then((resp)=>{
+            		this.userName=resp.data
+            	})
+            },
+            methods: {
+                next() {
+                    if (this.active < 3) this.active++;
+                    if(this.active==3)
+                    {
+                    	this.$confirm('检测到未保存的内容，是否在离开页面前保存并提交？', '确认信息', {
+                            distinguishCancelAndClose: true,
+                            confirmButtonText: '保存',
+                            cancelButtonText: '返回修改'
+                          })
+                            .then(() => {
+                              var param={
+                            		  userName:this.userName,
+                            		  age:this.age,
+                            		  time:this.time[0]+" to "+this.time[1],
+                            		  content:this.content,
+                            		  contact:this.phoneNumber
+                              }
+                              console.log(param)
+                              axios({
+                            	  method:"get",
+                            	  url:"http://localhost:8080/mySpiritual/consult/insertConsult",
+                              	  params:param
+                              }).then((resp)=>{
+                            	  if(resp.data=="success"){
+                            		  this.$message({
+                                          type: 'success',
+                                          message: '提交成功',
+                                        });
+                            	  }
+                              })
+                            })
+                            .catch(action => {
+                            	
+                              this.$message({
+                                type: 'info',
+                                message: action === 'cancel'
+                                  ? '放弃提交'
+                                  : '停留在当前页面'
+                              })
+                            });
+                    }
+                },
+                back(){
+                	if(this.active>0) this.active--;
+                }
+            }
+        })
+    </script>
+    <script>
+                    function over() {
+                        var a = document.getElementById("aa");
+                        a.setAttribute("style", "overflow:visible;background-color:yellow");
+                    }
+                    function out() {
+                        var a = document.getElementById("aa");
+                        a.setAttribute("style", "overflow:hidden");
+                    }
+                    function over1() {
+                        var a = document.getElementById("cc");
+                        a.setAttribute("style", "overflow:visible;background-color:green");
+                    }
+                    function out1() {
+                        var a = document.getElementById("cc");
+                        a.setAttribute("style", "overflow:hidden");
+                    }
+                    function over2() {
+                        var a = document.getElementById("ee");
+                        a.setAttribute("style", "overflow:visible;background-color:yellow");
+                    }
+                    function out2() {
+                        var a = document.getElementById("ee");
+                        a.setAttribute("style", "overflow:hidden");
+                    }
+                    function over3() {
+                        var a = document.getElementById("gg");
+                        a.setAttribute("style", "overflow:visible;background-color:red");
+                    }
+                    function out3() {
+                        var a = document.getElementById("gg");
+                        a.setAttribute("style", "overflow:hidden");
+                    }
+                </script>
+
+</body>
+
+</html>

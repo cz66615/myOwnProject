@@ -1,0 +1,80 @@
+
+ <!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+        <title>案例测试</title>
+        <style type="text/css">
+            img{width:200px;height:300px;}
+            div{    
+                width:200px;
+                height:300px;
+                position:absolute;
+                left:0;top:0;right:0;bottom:0;
+                margin:auto;
+                transform-style: preserve-3d;
+                transition: all 80s;
+                
+            }
+            div img{
+                position:absolute;
+            }
+            div img:nth-child(1){transform: translateZ(500px);}
+            div img:nth-child(2){transform: rotateY(60deg) translateZ(500px) ;}
+            div img:nth-child(3){transform: rotateY(120deg) translateZ(500px) ;}
+            div img:nth-child(4){transform: rotateY(180deg) translateZ(500px) ;}
+            div img:nth-child(5){transform: rotateY(240deg) translateZ(500px) ;}
+            div img:nth-child(6){transform: rotateY(300deg) translateZ(500px) ;}
+            div img:nth-child(7){transform: rotateY(60deg) translateZ(500px) ;}
+            div img:nth-child(8){transform: rotateY(120deg) translateZ(500px) ;}
+            div img:nth-child(9){transform: rotateY(180deg) translateZ(500px) ;}
+            div img:nth-child(10){transform: rotateY(240deg) translateZ(500px) ;}
+            div img:nth-child(11){transform: rotateY(300deg) translateZ(500px) ;}
+            div img:nth-child(12){transform: rotateY(360deg) translateZ(500px) ;}
+            div:hover{
+                transform: rotateY(720deg) rotateX(45deg);
+            }
+
+
+.bg{
+            width: 10%;
+            bottom:-1000px;
+        }
+
+        </style>
+    </head>
+    <body background="背景心心.jpg">
+        
+        <div>
+        <img src="img1.jpg"/>
+        <img src="img2.jpg" />
+        <img src="img3.jpg"/>
+        <img src="img4.jpg" />
+        <img src="img5.jpg"/>
+        <img src="img6.jpg" />
+        <img src="img7.jpg"/>
+        <img src="img8.jpg" />
+        <img src="img9.jpg" />
+        <img src="img10.jpg" />
+        <img src="img11.jpg" />
+        <img src="img12.jpg" />
+        </div>
+        <div class="bg"><embed src="成长关键期.mp3" loop="loop" autoplay="autoplay" ></embed></div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

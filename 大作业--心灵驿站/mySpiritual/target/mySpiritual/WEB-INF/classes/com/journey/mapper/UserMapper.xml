@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.journey.mapper.UserMapper">
+  <select id="selectAll" resultType="User">
+    select * from user;
+  </select>
+  <select id="selectUser" resultType="User">
+    select * from user where username=#{username} and password=#{password};
+  </select>
+  <select id="selectUserByName" resultType="User">
+  	select * from user where username=#{username};
+  </select>
+  <insert id="insertUser">
+  	insert into user values(#{userId},#{userName},#{password},#{age},#{sex})
+  </insert>
+</mapper>

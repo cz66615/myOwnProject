@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>left</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <style type="text/css">
+        h1 {margin-bottom:0;}
+        h2 {margin-bottom:0;font-size:36px;text-align: center;}
+        ul {margin:0;}
+        li {list-style:none;}
+        body{background:#ffc0cb;color:#ffffff;}
+        *{
+ padding:0;
+ margin:0;
+}
+ 
+li{
+ list-style: none;
+ font-size:50px;
+}
+/*上面的设置取消了无序列表开头的小圆点，并把所有li元素里的字号设置为50像素*/
+ 
+li a{
+ color:darkblue;
+ text-decoration: none;
+}
+/*上面把所有a元素里文本的下划线取消了，文本颜色设为深蓝，看起来更美观*/
+ 
+#menu{
+ width:500px;
+ margin: 50px;
+}
+ 
+#menu>li{
+ background-image:url("images/菜单栏.jpg");
+ background-size: 80%;
+ background-repeat:no-repeat;
+ text-indent:50px;
+ text-align: center;
+}
+/*上面把所有外层的li,也就是显示班级的li背景设置为一张灰色细长的图片，这里一定更要注意取消平铺（repeat），否则效果会很难看*/
+ 
+.second{
+ display:none;
+ text-indent:100px;
+}
+/*上面的设置让class为second的ul默认隐藏起来，并且在网页上不占位*/
+ 
+#menu>li:hover .second{
+ display:block;
+}
+/*上面的设置很关键，当鼠标悬停在外层的li上面时，里面的ul就会显示出来*/
+
+.bg{
+            width: 10%;
+            float: left;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <ul id='menu'>
+   <li><a href=' '>学习主题</a>
+    <ul class='second'>
+     <li><h2><a href="学习者类型.html" target="right">学习者类型</a></h2></li>
+     <li><h2><a href="寻找意义和价值.html" target="right">寻找意义和价值</a></h2></li>
+     <li><h2><a href="自我评估测试1.html" target="right">自我评估测试1</a></h2></li>
+    </ul>
+   </li>
+   <li><a href="#">适应主题</a>
+    <ul class='second'>
+     <li><h2><a href="人际关系.html" target="right">人际关系</a></h2></li>
+     <li><h2><a href="孤独和独处.html" target="right">孤独和独处</a></h2></li>
+     <li><h2><a href="自我评估测试2.html" target="right">自我评估测试2</a></h2></li>
+    </ul>
+   </li>
+   <li><a href='#'>改变主题</a>
+    <ul class='second'>
+     <li><h2><a href="改变与压力管理.html" target="right">改变与压力管理</a></h2></li>
+     <li><h2><a href="自我评估测试3.html" target="right">自我评估测试3</a></h2></li>
+    </ul>
+   </li>
+   <li><a href='#'>爱主题</a>
+    <ul class='second'>
+     <li><h2><a href="学会爱.html" target="right">学会爱</a></h2></li>
+     <li><h2><a href="自我评估测试4.html" target="right">自我评估测试4</a></h2></li>
+    </ul>
+   </li>
+  </ul>
+    
+    <div class="bg"><embed src="audios/成长关键期.mp3" loop="loop" autoplay="autoplay" ></embed></div>
+    </body>
+</html>
+
+
+
+

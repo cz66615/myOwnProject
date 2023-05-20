@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>自我评估测试1</title>
+    <script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style type="text/css">
+        h1 {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: #FFDAB9;
+            background-size: 100%;
+            background-repeat: repeat-y;
+
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    	<h4 style=" color:#ffe4e1">
+        <p>评分标准：</p>
+        <p>4=完全赞同 3=赞同 2=不赞同 1=完全不赞同</p>
+    </h4>
+    <h3 style=" color:#cd5c5c">
+        <p>1.我认为我可以自己选择人生道路</p>
+        <p>2.我非常清楚我能在生活中哪些方面做出改变，哪些方面无法改变</p>
+        <p>3.总的来说，我一直都想要“我的生活我做主”，哪怕为此付出代价或冒巨大风险</p>
+        <p>4.即使身边的人不愿意改变，我也有能力改变自己</p>
+        <p>5.我认为幸福和成功在很大程度上与归属感和社会交往有关</p>
+        <p>6.我努力在满足自己的需求和迎合他人需要之间达到平衡</p>
+        <p>7.我认为在心灵的最深处，人性是美好的并愿意向积极的方向发展</p>
+        <p>8.我是个主动的学习者</p>
+        <p>9.只要改变能让我成长，哪怕有时会经历痛苦，我也愿意做好准备迎接改变</p>
+        <p>10.我愿意用真诚的态度省察自己的生活，挑战自我</p>
+    </h3>
+
+<form name="f1">
+            <h4 style=" color:black">请输入结果<input type="text" ref="input">
+            <input type="button" value="提交" @click="record(1)"><br/></h4>
+        </form>
+    </div>
+        
+        <script type="text/javascript">
+        	new Vue({
+        		el:"#app",
+        		data(){
+        			return{
+        			}
+        		},
+        		methods:{
+        			record(arg){
+        				var param={
+        						num:"1",
+        						result:this.$refs.input.value
+        				}
+        				console.log(param)
+        				axios({
+        					method:"get",
+        					url:"http://localhost:8080/mySpiritual/test/insertTest",
+        					params:param
+        				}).then((reps)=>{
+        					 const h = this.$createElement;
+
+        				        this.$notify({
+        				          title: '',
+        				          message: h('i', { style: 'color: teal'}, '提交成功')
+        				        });
+        				})
+        			}
+        		}
+        	})
+        </script>
+</body>
+
+</html>

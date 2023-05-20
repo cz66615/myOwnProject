@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<style type="text/css">
+	#app{
+	margin:0 auto;
+	
+	
+ }
+#register{
+	width:800px;
+	height:600px;
+	margin:0 auto;
+	font-weight:bold;
+}
+#register img{
+	margin:0 auto;
+	display: table-cell;
+	width:200px;
+	height:200px;
+	margin-top:100px;
+}
+
+el-input{
+	width:200px;
+	margin:0 auto;
+}
+	
+</style>
+</head>
+<body background="images/lrbg.jpg" style="background-size: cover;background-repeat:no-repeat">
+ <div id="app">
+   <div id="register">
+	    <img src="images/1.png" id="img">
+		<div style="margin-left:220px;">
+		用户名:&nbsp;<el-input v-model="username" placeholder="请输入用户名" clearable style="width:300px;margin:0 auto;"
+		></el-input>
+		<br>
+	    <br>
+	    密&nbsp;&nbsp;&nbsp;码:&nbsp;<el-input placeholder="请输入密码" v-model="password" 
+	    show-password style="width:300px;margin:0 auto;" @input="changeSrc"></el-input>
+	    <br>
+	    <br>
+	    年&nbsp;&nbsp;&nbsp;龄:&nbsp;<el-input v-model="age" placeholder="请输入年龄" clearable style="width:300px;margin:0 auto;"
+		></el-input>
+		<br>
+		<br>
+		性&nbsp;&nbsp;&nbsp;别:&nbsp;&nbsp;<template>
+  <el-radio v-model="sex" label="男" style="margin-left:20px;">男</el-radio>
+  <el-radio v-model="sex" label="女">女</el-radio>
+</template>
+		<br>
+		<br>
+	    <div style="margin-left:120px;">
+	    	<el-row>
+  <el-button type="primary" @click="register" :loading="false" ref="register">注册</el-button>
+  <el-button type="primary" @click="back">返回</el-button>
+</el-row>
+<el-row>
+  <el-col :sm="12" :lg="6">
+    <el-result icon="success" id="success" style="display:none;">
+    </el-result>
+  </el-col>
+  </el-row>
+	    </div>
+	    </div>
+	    
+   </div>
+ </div>
+ <script type="text/javascript">
+ new Vue({
+  el:"#app",
+  data(){
+   return{
+    tableData: [],
+    username:'',
+    password:'',
+    age:'',
+    sex:'男'
+   }
+  },
+  mounted(){
+   
+  },
+  methods:{
+	changeSrc(){
+		console.log(this.password)
+		if(this.password.length==0)
+		{
+			console.log("无")
+			document.getElementById("img").src="images/1.png"
+		}
+		else if(this.password.length<=6)
+		{
+			console.log("低")
+			document.getElementById("img").src="images/2.png"
+		}
+		else if(this.password.length<=10)
+		{
+			console.log("中")
+			document.getElementById("img").src="images/3.png"
+		}
+		
+	},
+   register(){
+	this.$refs.register.loading=true
+    var rdata={
+	     username:this.username,
+	     password:this.password,
+	     age:this.age,
+	     sex:this.sex
+    }
+	console.log(rdata)
+    axios({
+	     method:"get",
+	     url:"http://localhost:8080/mySpiritual/user/Register",
+	     params:rdata
+		}).then((resp)=>{
+	    	if(resp.data=="success")
+	    	{
+	    		this.$message.success("注册成功");
+	    		document.getElementById("success").style.display="block"
+	    	}
+	    	else if(resp.data=="duplicate")
+	    	{
+	    		this.$message.error("用户名已存在");	
+	    	}
+	    	this.$refs.register.loading=false
+		})
+ 	},
+ 	back(){
+ 		  window.location.href="login.html";
+ 	  }
+  }
+ })
+ </script>
+</body>
+</html>

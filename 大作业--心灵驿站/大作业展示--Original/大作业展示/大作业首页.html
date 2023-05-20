@@ -1,0 +1,602 @@
+
+
+-<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css" >
+        #container{width:1000px;height: 1000px}
+        #header {position:absolute;width:100%;height: 200px;background-color:#99bbbb;background-image:url("心心.jpg");background-size:20%;background-repeat:repeat-x;box-shadow: 10px 10px 5px #888888;}
+        #PageBody{ position:absolute;height:800px;width:100%;margin-bottom:5px;box-shadow: 10px 10px 5px #888888;}
+        /*#PageBody-right { position:absolute;right:0;top:0;height:800px;width:50%;margin-bottom:5px;box-shadow: 10px 10px 5px #888888;background-color:#ffe4e1;}*/
+        #menu {position:absolute;background-color:#ffe4e1;left:0;top:200px;height:600px;width:370px;float:left;box-shadow: 10px 10px 5px #888888;text-align: center;}
+        #content-left{position:absolute;background-color:#EEEEEE;left:370px;top:220px;height:600px;width:1000px;}
+        #content-right{position:absolute;background-color:#FFE4E1;height:600px;width:400px;float:left;left:1370px;top:220px;box-shadow: 10px 10px 5px #888888;}
+        #footer {position:absolute;background-color:#99bbbb;top:2000px;clear:both;text-align:center;box-shadow: 10px 10px 5px #888888;}
+        h1 {margin-bottom:0;font-size:22px;}
+        h2 {margin-bottom:0;font-size:18px;color: #db7093}
+        ul {margin:0;}
+        li {list-style:none;}
+
+img.meme{
+    left: 0;
+    position:relative;
+    bottom: -200px;
+}
+
+*
+{ 
+   margin:0px;
+   padding:0px;}
+#aa
+{
+    height:40px;
+    width:90px;
+    top:80px;
+    left:200px;
+    background-color:#ffb6c1;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    line-height:40px;
+}
+#bb
+{
+    height:120px;
+    width:90px;
+    top:40px;
+    left:0px;
+    background-color:#fff0f5;
+    position:absolute;
+}
+table
+{
+    height:120px;
+    width:90px;
+    border:0px;
+    text-align:center;
+}
+#cc
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    overflow:hidden;
+    background-color:#ffc0cb;
+    
+}
+#dd
+{
+    height:40px;
+    width:90px;
+    background-color:#dda0dd;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+#ee
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:40px;
+    overflow:hidden;
+    background-color:#ee82ee;
+    
+}
+#ff
+{
+    height:40px;
+    width:90px;
+    background-color:#d8bfd8;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+#gg
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:80px;
+    overflow:hidden;
+    background-color:#ffb6c1;
+    
+}
+#hh
+{
+    height:40px;
+    width:90px;
+    background-color:#db7093;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+
+/*图片轮播*/
+#max{
+  width: 900px;
+  height: 500px;
+  align-items: center;
+  margin: 5% auto;
+  margin-top: 0%;
+}
+.re{
+  position: relative;
+  height: 400px;
+}
+.re ul{
+  list-style-type:none ;
+}
+.re ul>li{
+  width: 600px;
+  height: 300px;
+  position: absolute;
+
+  transition: 1s;
+  opacity: 0;
+}
+.re ul>li img{
+  width: 900px;
+  height: 500px;
+  border-radius: 10%;
+  border: 15px solid #fffbd6;
+}
+#max ol {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5,75px);
+  grid-template-rows: auto;
+  grid-gap: 1em;gap: 1em;
+  float: right;
+  margin-top: 450px;
+  list-style: none;
+  top:0;left:0;
+}
+#max ol li {
+  width: 25px;
+  height: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  float: left;
+  text-align: center;
+  border-radius: 2em;
+  border: 5px solid #999999;
+}
+/*
+
+.picture {
+            position: relative;
+            width: 800px;
+            height: 450px;
+            top:20px;
+            margin: 0 auto;
+            border: 2px solid rgb(231, 127, 217);
+            overflow: hidden;
+        }
+
+        .radius {           /* 圆点所在的p (容器)  */
+         /*   width: 100%;
+            height: 5px;
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+
+        .pg {                         
+            position: absolute;
+            margin: 0;
+            width: 100%;
+            height: 20px;
+            background-color: rgba(0, 0, 0, .4);
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .title {
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(21, 223, 72);
+        }
+
+        span {
+            display: inline-block;
+            border: 10px solid #fdfdfd;
+            border-radius: 50%;
+        }
+
+        .active {
+            border: 10px solid #656466;
+        }
+
+        /* 左右箭头  */
+       /* .arrowhead-left,
+        .arrowhead-right {
+            position: absolute;
+            width: 41px;
+            height: 69px;
+            font-size: 30px;
+            line-height: 70px;
+            text-align: center;
+            color: #D6D8D4;
+            background-color: rgba(0,0,0,.3);
+        }
+
+        .arrowhead-left {
+            left: 0;
+            top: 40%;
+        }
+
+        .arrowhead-right {
+            right: 0;
+            top: 40%;
+        }*/
+
+
+
+#ccc{
+            position: absolute;
+            width: 50px;
+            height:50px;
+            background:linear-gradient(to bottom,#f1f1f1,#DFDFF5,#FF9980,#FFC080,#f1f1f1);
+            border-radius:50%;
+            opacity:0.5;
+            left:0;
+            bottom: -80px;
+            animation:flying 10s ease-in infinite;
+        }
+        #ccc:nth-child(1){
+            width:50px;
+            height: 50px;
+            animation-duration:3s;
+            animation-delay:0s;
+        }
+        #ccc:nth-child(2){
+            width:30px;
+            height: 30px;
+            animation-duration:3s;
+            animation-delay:1s;
+        }
+        #ccc:nth-child(3){
+            /*left:20%;*/
+            width:10px;
+            height: 10px;
+            animation-duration:6s;
+            animation-delay:2s;
+        }
+        #ccc:nth-child(4){
+            /*right:20%;*/
+            width:20px;
+            height: 20px;
+            animation-duration:6s;
+            animation-delay:2s;
+        }
+        #ccc:nth-child(5){
+            /*right:50%;*/
+            width:40px;
+            height: 40px;
+            animation-duration:5s;
+            animation-delay:1s;
+        }
+        @keyframes flying{
+            0%{
+                bottom: -100px;
+                transform:translatex(0px);
+            }
+            50%{
+                transform:translatex(100px);
+            }
+            100%{
+                bottom:1000px;
+                transform:translatex(-200px);
+            }
+        }
+        </style>
+    </head>
+    <body>
+
+    
+
+<div id="container">
+
+        <div id="header">
+        <img src="心心.jpg" width="20%" border="0" alt="">
+        </div>
+        <div id="PageBody">
+            <div id="menu">
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <h3 style="color:#40e0d0">
+<div id="aa" onmouseover="over()"  onmouseout="out()"><a href="遇见自己.html">遇见自己</a>
+<div id="bb">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td height="40px" width="90px">
+<div id="cc" onmouseover="over1()" onmouseout="out1()"><a href="我的成长关键期.html">我的成长关键期</a></td></tr>
+<tr><td height="40px" width="90px"><div id="ee" onmouseover="over2()" onmouseout="out2()"><a href="主题选择.html">主题选择</a></td></tr>
+<tr><td height="40px" width="90px"><div id="gg" onmouseover="over3()" onmouseout="out3()"><a href="其他案例分析.html">其他案例分析</a></td></tr>
+</table>
+</div>
+</div>
+
+<img class="meme" src="么么.gif" width="100%" border="0" alt="">
+
+           <!-- <ul>
+                <li><span><a href="遇见自己.html">遇见自己</a></span></li>
+                <li><span><a href="我的成长关键期.html">我的成长关键期</a></span></li>
+                <li><span><a href="主题选择.html">主题选择</a></span></li>
+                <li><span><a href="其他.html">其他</a></span></li>
+            </ul>
+            </div>
+            <div id="content">
+            <center>
+            <h3>个人主页</h3>       
+            <img src="主页图片.jpg" width="70%" border="0" alt="">
+            </center>
+            </div>
+        </div>
+        <div id="footer">
+        <p>Copyrights</p>       
+        </div>
+        </div>-->
+
+
+
+<script>
+function over()
+{
+ var a = document.getElementById("aa");
+ a.setAttribute("style","overflow:visible;background-color:yellow");}
+function out()
+{
+var a = document.getElementById("aa");
+ a.setAttribute("style","overflow:hidden");
+}
+function over1()
+{
+ var a = document.getElementById("cc");
+ a.setAttribute("style","overflow:visible;background-color:green");}
+function out1()
+{
+var a = document.getElementById("cc");
+ a.setAttribute("style","overflow:hidden");
+}
+function over2()
+{
+ var a = document.getElementById("ee");
+ a.setAttribute("style","overflow:visible;background-color:yellow");}
+function out2()
+{
+var a = document.getElementById("ee");
+ a.setAttribute("style","overflow:hidden");
+}
+function over3()
+{
+ var a = document.getElementById("gg");
+ a.setAttribute("style","overflow:visible;background-color:red");}
+function out3()
+{
+var a = document.getElementById("gg");
+ a.setAttribute("style","overflow:hidden");
+}
+ </script>
+</div></div>
+
+
+<div id="content-left">
+ <div id="max">
+        <div class="re">
+            <ul>
+                <li><img src="轮播1.jpg" alt=""></li>
+                <li><img src="轮播6.jpg" alt=""></li>
+                <li><img src="轮播3.jpg" alt=""></li>
+                <li><img src="轮播4.jpg" alt=""></li>
+                <li><img src="轮播5.jpg" alt=""></li>
+            </ul>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+
+<script>
+    window.onload = function(){
+  var box=this.document.getElementsByClassName("re")[0];
+  var lik=box.getElementsByTagName("li");
+  function fun(i,j){//转换图片函数，就是把透明度改了一下
+    lik[i].style.opacity=1;
+    lik[j].style.opacity=0;
+    lik[i+5].style.backgroundColor="#ffffff";//改一下小图标
+    lik[j+5].style.backgroundColor="#00000000"
+  }
+  fun(0,1);//初始化下
+  var i =0;
+  function auto(){//轮播循环函数
+    if(++i>=5){
+      i=0;
+      fun(0,4);
+    }
+    else fun(i,i-1);
+  }
+  timer=this.setInterval(auto,2000);
+  box.onmouseover = function () { //鼠标划上去，停止轮播
+    console.log('good');
+    clearInterval(timer);
+  }
+  box.onmouseout = function () { //鼠标划出，继续轮播
+    timer = setInterval(auto, 2000); //调用定时器
+  }
+  var j =0;
+  for(;j<5;j++){//点击小图标也可以转换图片
+    lik[j+5].ind=j;
+    lik[j+5].onclick=function(){
+      fun(this.ind,i)
+      i=this.ind;
+    }
+  }
+
+}
+</script>
+</div>
+<!--<div class="picture">
+        <!-- 图片页码 -->
+        <!--<p class="pg">心灵驿站</p >
+        <img src="轮播封面.jpeg" alt="">
+
+        <!-- 小圆点点 -->
+        <!--<p class="radius"></p >
+        <!-- 图片的下面标题 -->
+        <!--<p class="title"> </p >
+
+        <!-- 左右箭头 -->
+        <!--<div class="arrowhead-left" id="al"> < </div> 
+        <div class="arrowhead-right" id="ar"> > </div>
+
+    <script>
+        var address = ["轮播1.jpg", "轮播2.jpg", "轮播3.jpg", "轮播4.jpg", "轮播5.jpg", "轮播6.jpg"];
+        //  var imgs = document.getElementsByTagName("img");
+        var imgs = document.querySelector("img");
+        var len = address.length;               //图片地址的数量为len
+        var str = "";
+        var pp = document.getElementsByTagName("p");//获取的是p标签的集合
+        //  var pp  = document.querySelector("p");    //获取的是一个元素
+        var al = document.getElementById("al");
+        var ar = document.getElementById("ar");
+        var n = 0 ;
+
+        //添加span标签（小圆点），个数为len个
+        for (i = 0; i < len; i++) {
+            str += ' <span></span>'
+        }
+        pp[1].innerHTML = str;
+       
+        var spans = pp[1].getElementsByTagName('span');  //获取p[1]里所有span标签
+        spans[0].className = 'active';                  //给第一个span标签添加样式 active
+
+        for (i = 0; i < len; i++) {
+            spans[i].index = i;              //自定义索引值
+        
+            spans[i].onmouseover = function () {            //鼠标指向圆点时的事件
+                for (i = 0; i < len; i++) {
+                    spans[i].className = "";               //通过循环，清除所有圆点的类名
+                }
+                n=this.index ;
+                this.className = 'active';                 //给鼠标移入的圆点添加类名
+                imgs.src = address[this.index];
+                /*pp[0].innerHTML = [this.index + 1] + "/6";    
+                pp[2].innerHTML = "风光" + [this.index + 1];*/
+                
+            }
+           
+        }
+            
+        ar.onclick = function () {            //右侧箭头，点击一次图片向右换一张
+            n++;
+           if (n>5) {
+              n=0;  
+           } 
+           for (i = 0; i < len; i++) {
+                spans[i].className = "";
+            }
+
+            spans[n].className = "active";
+            imgs.src = address[n];
+            /*pp[0].innerHTML = (n+1) + "/6";
+            pp[2].innerHTML = "风光" +(n+1);*/
+          
+        }
+
+        al.onclick = function () {        // //左侧箭头，点击一次图片向左换一张
+          n--;
+         if (n<0) {
+             n=(len-1);
+         }
+         for (i = 0; i < len; i++) {
+              spans[i].className = "";
+          }         
+          spans[n].className = "active";
+          imgs.src = address[n];
+          /*pp[0].innerHTML = (n+1) + "/6";
+          pp[2].innerHTML = "风光" +(n+1);*/
+        } 
+       
+       setInterval(ar.onclick,3000);             //添加定时器  setInterval（函数，间隔时间单位为毫秒）
+                                                 //此次添加的函数为点击右侧箭头，间隔为3秒
+    </script>
+    </div>
+    </div>-->
+
+   
+
+    <div id="content-right">
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+    <div id="ccc"></div>
+        <center><h1>
+        <p><a href="https://baike.baidu.com/item/%E9%9D%92%E6%98%A5%E6%9C%9F/17633538?fr=aladdin">青春期</a></p>
+        <p><a href="http://news.sina.com.cn/s/2008-06-17/141715762001.shtml">环境对青少年的影响</a></p>
+        <p><a href="http://www.360doc.com/content/11/1004/13/535749_153311248.shtml">青少年的大脑</a></p>
+        <p><a href="https://zhidao.baidu.com/question/23505730.html">青少年思维发展的特点</a></p>
+        <p><a href="https://baike.baidu.com/item/%E5%9F%83%E9%87%8C%E5%85%8B%E6%A3%AE%E5%85%AB%E9%98%B6%E6%AE%B5%E7%90%86%E8%AE%BA/8394418?fr=aladdin">埃里克森八阶段理论</a></p>
+        <p><a href=" https://baike.baidu.com/item/%E5%90%8C%E4%B8%80%E6%80%A7%E6%B7%B7%E4%B9%B1/15581454?fr=aladdin">同一性混乱</a></p>
+       </h1></center>
+        
+        
+    </div>
+
+    <div id="footer">
+        <embed src="首页.mp3" loop="loop" autoplay="autoplay" ></embed>
+    </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+#app{
+	margin:0 auto;
+ }
+#register{
+	width:800px;
+	height:600px;
+	margin:0 auto;
+	font-weight:bold;
+}
+#register img{
+	margin:0 auto;
+	display: table-cell;
+	width:200px;
+	height:200px;
+	margin-top:100px;
+}
+
+el-input{
+	width:200px;
+	margin:0 auto;
+}

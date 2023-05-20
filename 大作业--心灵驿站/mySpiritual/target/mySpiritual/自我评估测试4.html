@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>自我评估测试4</title>
+        <script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+        <style type="text/css">
+        h1 {margin-bottom:0;}
+        h2 {margin-bottom:0;font-size:36px;text-align: center;}
+        ul {margin:0;}
+        li {list-style:none;}
+        body{background-color:#FFE4E1;
+        background-size:100%;
+        background-repeat:repeat-y;
+
+        color:#ffffff;}
+        
+        </style>
+    </head>
+    <body>
+    <div id="app">
+    	<h4 style=" color:#ffc0cb">
+        <p>评分标准：</p >
+        <p>4=完全赞同 3=赞同 2=不赞同 1=完全不赞同</p >
+        </h4>
+        <h3 style=" color:#ff69b4">
+        <p>1.我的父母表现出健康的恋爱方式</p >
+        <p>2.我害怕失去别人的爱和被拒绝</p >
+        <p>3.在爱中受到伤害或挫折后，我发现我很难再相信或爱别人了</p >
+        <p>4.我会郑重其事地向我爱的人表达自己的心意，我对亲密关系也感到很舒服</p >
+        <p>5.我能够向同性表达爱的情感</p >
+        <p>6.我能够接受那些在我生命中处于重要地位的人向我示爱的方式</p >
+        <p>7.我觉得恋爱既有风险也有快乐</p >
+        <p>8.在恋爱中，我感受到的是信任，没有恐惧</p >
+        <p>9.我接受那些我爱的人本身，并不要求他们为我而改变</p >
+        <p>10.我需要与我爱的那些人保持持续的亲近和亲密关系</p >
+        </h3>
+    <form name="f1">
+            <h4 style=" color:black">请输入结果<input type="text" ref="input">
+            <input type="button" value="提交" @click="record"><br/></h4>
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        	new Vue({
+        		el:"#app",
+        		data(){
+        			return{
+        				result:""
+        			}
+        		},
+        		methods:{
+        			record(){
+        				var param={
+        						num:"4",
+        						result:this.$refs.input.value
+        				}
+        				console.log(param)
+        				axios({
+        					method:"get",
+        					url:"http://localhost:8080/mySpiritual/test/insertTest",
+        					params:param
+        				}).then((reps)=>{
+        					 const h = this.$createElement;
+
+        				        this.$notify({
+        				          title: '',
+        				          message: h('i', { style: 'color: teal'}, '提交成功')
+        				        });
+        				})
+        			}
+        		}
+        	})
+        </script>
+    </body>
+</html>

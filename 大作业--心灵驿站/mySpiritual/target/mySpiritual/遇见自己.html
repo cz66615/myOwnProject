@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>遇见自己</title>
+<link rel="stylesheet" type="text/css" href="css/book.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="js/axios.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<section id="knowledge" class="viewBlock">
+<div class="bookBox">
+<a class="lastBtn"><</a>
+<a class="nextBtn">></a>
+<div class="bookPage frist">
+<img src="images/dataImg1.png" />
+</div>
+<div class="bookPage runPage" v-if="pages>=1">
+<div class="bookWord">
+<h4>
+{{showData[0]}}</h4>
+<span class="pageNumber">1</span>
+</div>
+<img src="images/dataImg2.png" />
+</div>
+<div class="bookPage runPage" v-if="pages>=2">
+<div class="bookWord">
+<h4>
+                    
+                {{showData[1]}}</h4>
+<span class="pageNumber">2</span>
+</div>
+<img src="images/dataImg3.png" />
+</div>
+<div class="bookPage runPage" v-if="pages>=3">
+<div class="bookWord">
+<h4>
+                    
+                {{showData[2]}}</h4>
+<span class="pageNumber">3</span>
+</div>
+<img src="images/dataImg4.png" />
+</div>
+<div class="bookPage last" v-if="pages>=4">
+<div class="bookWord">
+<h4>
+                    
+                {{showData[3]}}</h4>
+<span class="pageNumber">4</span>
+</div>
+</div>
+</div>
+</section>
+<div style="text-align:center;">
+</div>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data(){
+				return{
+					pages:4,
+					showData:[]
+				}
+			},
+			mounted(){
+				axios({
+					method:"get",
+					url:"http://localhost:8080/mySpiritual/meet/selectAll"
+				}).then((resp)=>{
+					var data=resp.data
+					for(var i=0;i<4;i++){
+						var temp=data[i].phenomenon
+						this.showData.push(temp)
+					}
+					console.log(this.showData)
+				}),
+				axios({
+					method:"get",
+					url:"http://localhost:8080/mySpiritual/meet/getPages"
+				}).then((resp)=>{
+					console.log(resp.data)
+					this.pages=resp.data
+				})
+			}
+		})
+	</script>
+</body>
+
+</html>
