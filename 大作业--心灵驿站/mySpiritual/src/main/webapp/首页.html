@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>心灵驿站</title>
+	<style type="text/css">
+  @keyframes move {
+0% {background-position: 0 0;}
+100% {
+/*宽度固定，如果为百分比背景不会滚动*/
+background-position: -300px 0;
+}
+}
+.wrap {
+/*设置背景渐变色*/
+background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange,yellow, green, yellow, orange, red);
+/*chrome私有样式，加前缀，文字显示背景图片*/
+-webkit-background-clip: text;
+animation: move 5s infinite;
+/*文字颜色设为透明*/
+color: transparent;
+/*宽度固定*/
+width: 1500px;
+text-align:center;
+font-size: 90px;
+}
+</style>
+<script type="text/javascript" src="js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body background="images/4.jpg" style="background-size: cover;background-repeat:no-repeat" >
+  <br/>  <br/> <br/> <br/>			
+<div class="wrap">心灵驿站</div>
+  <br/>  <br/> <br/> <br/>	  <br/>  <br/> <br/> <br/>	  <br/>  <br/> <br/> <br/>	  <br/>  <br/> <br/> <br/>	
+    <br/>  <br/> <br/> <br/>	  <br/> 
+    
+    <div id="app">
+    
+   <el-row>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<el-button type="primary" @click="login">进入</a></el-button>
+
+</el-row>
+</div>
+   <script type="text/javascript">
+    new Vue({
+     el:'#app',
+     data(){
+      return{
+       
+      }
+     },
+     methods:{ 
+    	  login(){
+    	     window.location.href="login.html";
+    	    }
+    	  }
+    })
+    
+    </script>
+</body>
+</html>

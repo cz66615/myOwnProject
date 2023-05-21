@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遇见自己</title>
+    <style>
+        /*#left{position:absolute;left:0;top:0px;height:800px;width:500px;float:left;text-align: center;}
+        #middle{position:absolute;left:450px;top:0px;height:800px;width:500px;}
+        #right{position:absolute;height:800px;width:500px;float:right;left:900px;top:0px;}*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-image: radial-gradient(white,black);
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .shu{
+            position: relative;
+            width: 450px;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.774);
+            transform-style:  preserve-3d;
+            box-shadow:   300px 0px 30px  rgb(0, 0, 0,.6) inset;
+            transition: 1s cubic-bezier(.79,.34,.47,.92);
+        }
+        .shu::after{
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 303px;
+            left: 0px;
+            bottom: -3px;
+           /*  background-color: rgb(100, 96, 96); */
+           background-image: linear-gradient(to right,rgb(71, 68, 68),rgba(124, 120, 120, 0.3) );
+            border-bottom-left-radius: 5px;
+        }
+        .shu::before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            right: -3px;
+            top: 0px;
+            background-color: rgb(112, 108, 108);
+           background-image: linear-gradient(to top,rgb(114, 111, 111),rgba(90, 87, 87, 0.5) );;
+            border-top-right-radius: 3px;
+        }
+ 
+        .shu:hover{
+            box-shadow:   30px 0px 30px  rgb(0, 0, 0,.6) inset;
+            transform: rotate(-5deg);
+ 
+        }
+        .feng{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color:#ffe4e1;
+            background-size: 100% ;
+            transform-origin: left;
+            transition: 1s cubic-bezier(.79,.34,.47,.92);
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+           
+           
+        }
+
+        .shu:hover .feng{
+            transform: rotateY(-140deg);
+            
+        }
+        
+          .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: left;
+            border: 1px solid #1976D2;
+        }
+
+        .ye{
+            background-color: #fff;
+            color:#33363c;
+            animation:roll 60s ease 0s 2 alternate;
+        }
+        .ye1{
+            animation:roll 50s ease 10s 2 alternate;
+        }
+        .ye2{
+            animation:roll 40s ease 20s 2 alternate;
+        }
+        .ye3{
+            animation:roll 30s ease 30s 2 alternate;
+        }
+        .ye4{
+            animation:roll 20s ease 40s 2 alternate;
+        }
+        /*.ye5{
+            animation:roll 20s ease 30s 2 alternate;
+        }
+        .ye6{
+            animation:roll 25s ease 25s 2 alternate;
+        }
+        .ye7{
+            animation:roll 30s ease 20s 2 alternate;
+        }
+        .ye8{
+            animation:roll 25s ease 25s 2 alternate;
+        }
+        .ye9{
+            animation:roll 20s ease 30s 2 alternate;
+        }
+        .ye10{
+            animation:roll 25s ease 25s 2 alternate;
+        }*/
+        @keyframes roll{
+            from {transform:rotateY(0)}
+            to{transform:rotateY(-180deg);}
+        }
+       
+     
+        .wen{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            font-family: 'fangsong';
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+   <div class="shu" style="top:20px left:20px">
+       <div class="feng"><h1 style="padding-top: 50px;padding-left: 40px;center;">遇见自己</h1></div>
+       <div class="wen">
+       <div class="page ye ye1">
+       <h4><p style="center;">婴儿期</p >
+               <p>(0~2岁)</p>
+               <p>这个时候的你，还不会说话，不懂得如何正确的表达需要，正在学习怎么样和人沟通，逐渐认识到自己是一个独立的人，学着信任别人，学坐，站，走，跑和摆弄东西。</p>
+               <p>你还在学着自己吃饭，虽然你总是笨拙的打翻饭碗，把米粒吃的满身都是，但是这个时候的你已经会表达愤怒和快乐。</p>
+               <p>现在的你，最需要被爱和被关怀... ...</p></h4>
+           </div>
+
+            <div class="page ye ye2">
+           <h4><p style="center;">儿童期</p >
+               <p>(2~12岁)</p>
+               <p>这个时候的你，语言和运动能力都有了显著的提高，你正在学习和别人一起玩耍，学会分享，发展同伴关系，开始认识到自己和周围所处的世界是相联系的。</p>
+               <p>你开始学习阅读，写作，算术。你对性别，文化，民族有了更深入的认识。有了更好的共情能力，能够更好地接受别人的观点。</p>
+               <p>现在的你，需要完成自我控制的任务，逐渐拓展自己对这个世界的了解和认识... ...</p></h4>
+       </div>
+
+                <div class="page ye ye3">
+           <h4><p style="center;">青春期</p >
+               <p>(11~14岁)</p>
+               <p>这个时候的你，开始表达自己的见解，继续发展独立意识，加深对道德的理解能力，适应身体以及外形上的快速变化，学会与他人协作。</p>
+               <p>你与同龄人，家庭和社区的关系进一步拓展。</p>
+               <p>现在的你，偶尔会矛盾，可能会出现一些负面情绪... ...</p></h4>
+       </div>
+
+        <div class="page ye ye4">
+       <h4><p style="center;">青少年期</p >
+               <p>(14~20岁)</p>
+               <p>这个时候的你，开始表达自己的见解，继续发展独立意识，加深对道德的理解能力，适应身体以及外形上的快速变化，学会与他人协作。</p>
+               <p>你与同龄人，家庭和社区的关系进一步拓展。</p>
+               <p>现在的你，偶尔会矛盾，可能会出现一些负面情绪... ...</p></h4>
+       </div>
+   </div>
+   </div>
+
+</body>
+</html>

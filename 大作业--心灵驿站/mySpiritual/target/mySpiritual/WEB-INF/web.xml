@@ -1,0 +1,77 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<display-name>RegisterServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TestServlet</servlet-name>
+  	<display-name>TestServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.TestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TopicServlet</servlet-name>
+  	<display-name>TopicServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.TopicServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MeetServlet</servlet-name>
+  	<display-name>MeetServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.MeetServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ConsultServlet</servlet-name>
+  	<display-name>ConsultServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.ConsultServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>BaseServlet</servlet-name>
+  	<display-name>BaseServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.journey.web.BaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TestServlet</servlet-name>
+  	<url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TopicServlet</servlet-name>
+  	<url-pattern>/TopicServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MeetServlet</servlet-name>
+  	<url-pattern>/MeetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ConsultServlet</servlet-name>
+  	<url-pattern>/ConsultServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BaseServlet</servlet-name>
+  	<url-pattern>/BaseServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

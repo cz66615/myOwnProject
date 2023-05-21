@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.journey.mapper.TopicMapper">
+  <select id="selectByUserName" resultType="Topic">
+  	select * from topic where userName=#{userName}
+  </select>
+  <insert id="insertTopic">
+  	insert into topic values(#{userName},#{num},#{topicName})
+  </insert>
+  <delete id="updateTopic">
+  	update topic set num=#{num},topicName=#{topicName} where username=#{userName}
+  </delete>
+</mapper>

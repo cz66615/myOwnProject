@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="js/axios.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style type="text/css">
+        #app {
+            margin: 0 auto;
+
+        }
+
+        #register {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        #register img {
+            margin: 0 auto;
+            display: table-cell;
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+        }
+
+        el-input {
+            width: 200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body background="images/lrbg.jpg" style="background-size: cover;background-repeat:no-repeat">
+    <div id="app">
+        <div id="register">
+            <img src="images/1.png" id="img">
+            <div style="margin-left:220px;">
+                用户名:&nbsp;<el-input v-model="username" placeholder="请输入用户名" clearable
+                    style="width:300px;margin:0 auto;"></el-input>
+                <br>
+                <br>
+                密&nbsp;&nbsp;&nbsp;码:&nbsp;<el-input placeholder="请输入密码" v-model="password" show-password
+                    style="width:300px;margin:0 auto;" @input="changeSrc"></el-input>
+                <br>
+                <br>
+                <div style="margin-left:120px;">
+                    <el-row>
+                        <el-button type="primary" @click="login" :loading="false" ref="login">登录</el-button>
+                        <el-button type="success" @click="register">注册</el-button>
+                    </el-row>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    username: '',
+                    password: ''
+                }
+            },
+            mounted() {
+
+            },
+            methods: {
+                changeSrc() {
+                    if (this.password.length == 0) {
+                        document.getElementById("img").src = "images/1.png"
+                    }
+                    else if (this.password.length <= 6) {
+                        document.getElementById("img").src = "images/2.png"
+                    }
+                    else if (this.password.length <= 10) {
+                        document.getElementById("img").src = "images/3.png"
+                    }
+
+                },
+                login() {
+                    this.$refs.login.loading = true
+                    var ldata = {
+                        username: this.username,
+                        password: this.password,
+                    }
+                    axios({
+                        method: "get",
+                        url: "http://localhost:8080/mySpiritual/user/Login",
+                        params: ldata
+                    }).then((resp) => {
+                        if (resp.data == "success") {
+                            this.$message.success("登录成功");
+                            window.location.href = "welcome.html";
+                        }
+                        else if (resp.data == "errusername") {
+                            this.$message.error("用户名不存在");
+                        }
+                        else if (resp.data == "errpassword") {
+                            this.$message.error("密码错误");
+                        }
+                        this.$refs.login.loading = false
+                    })
+                },
+                register() {
+                    window.location.href = "register.html";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

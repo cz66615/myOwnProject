@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>主页</title>
+        <script type="text/javascript" src="js/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    </head>
+    <body>
+
+    <div id="app">
+     <el-steps :active="active" finish-status="success">
+   <el-step title="预约时间"></el-step>
+    <el-step title="填写咨询内容"></el-step>
+  <el-step title="填写联系方式"></el-step>
+</el-steps>
+<el-button style="margin-top: 12px;" @click="next">下一步</el-button>
+    </div>
+
+<script>
+  new Vue({
+	  el:"#app",
+	  data() {
+      return {
+        active: 0
+      };
+    },
+    methods: {
+      next() {
+        if (this.active++ > 2) this.active = 0;
+      }
+    }
+  })
+</script>
+    </body>
+</html>
+
+
+
+

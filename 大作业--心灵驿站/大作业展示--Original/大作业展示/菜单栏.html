@@ -1,0 +1,163 @@
+
+-<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>首页</title>
+        <style type="text/css" >
+*
+{ 
+   margin:0px;
+   padding:0px;}
+#aa
+{
+    height:40px;
+    width:90px;
+    top:80px;
+    left:200px;
+    background-color:#ffb6c1;
+    position:relative;
+    overflow:hidden;
+    text-align:center;
+    line-height:40px;
+}
+#bb
+{
+    height:120px;
+    width:90px;
+    top:40px;
+    left:0px;
+    background-color:#fff0f5;
+    position:absolute;
+}
+table
+{
+    height:120px;
+    width:90px;
+    border:0px;
+    text-align:center;
+}
+#cc
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    overflow:hidden;
+    background-color:#ffc0cb;
+    
+}
+#dd
+{
+    height:40px;
+    width:90px;
+    background-color:#dda0dd;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+#ee
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:40px;
+    overflow:hidden;
+    background-color:#ee82ee;
+    
+}
+#ff
+{
+    height:40px;
+    width:90px;
+    background-color:#d8bfd8;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+#gg
+{
+    height:40px;
+    width:90px;
+    position:absolute;
+    left:0px;
+    top:80px;
+    overflow:hidden;
+    background-color:#ffb6c1;
+    
+}
+#hh
+{
+    height:40px;
+    width:90px;
+    background-color:#db7093;
+    position:absolute;
+    left:90px;
+    top:0px;
+    
+}
+        </style>
+    </head>
+    <body>
+
+    <h3 style="color:#40e0d0">
+<div id="aa" onmouseover="over()"  onmouseout="out()"><a href="遇见自己.html">遇见自己</a>
+<div id="bb">
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td height="40px" width="90px">
+<div id="cc" onmouseover="over1()" onmouseout="out1()"><a href="成长关键期.html">我的成长关键期</a></td></tr>
+<tr><td height="40px" width="90px"><div id="ee" onmouseover="over2()" onmouseout="out2()"><a href="主题选择.html">主题选择</a></td></tr>
+<tr><td height="40px" width="90px"><div id="gg" onmouseover="over3()" onmouseout="out3()"><a href="其他.html">其他</a></td></tr>
+</table>
+</div>
+</div>
+
+
+
+<script>
+function over()
+{
+ var a = document.getElementById("aa");
+ a.setAttribute("style","overflow:visible;background-color:yellow");}
+function out()
+{
+var a = document.getElementById("aa");
+ a.setAttribute("style","overflow:hidden");
+}
+function over1()
+{
+ var a = document.getElementById("cc");
+ a.setAttribute("style","overflow:visible;background-color:green");}
+function out1()
+{
+var a = document.getElementById("cc");
+ a.setAttribute("style","overflow:hidden");
+}
+function over2()
+{
+ var a = document.getElementById("ee");
+ a.setAttribute("style","overflow:visible;background-color:yellow");}
+function out2()
+{
+var a = document.getElementById("ee");
+ a.setAttribute("style","overflow:hidden");
+}
+function over3()
+{
+ var a = document.getElementById("gg");
+ a.setAttribute("style","overflow:visible;background-color:red");}
+function out3()
+{
+var a = document.getElementById("gg");
+ a.setAttribute("style","overflow:hidden");
+}
+ </script>
+</div></div>
+
+    </body>
+</html>
